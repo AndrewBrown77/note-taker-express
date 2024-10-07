@@ -1,22 +1,26 @@
 // Dependencies
-const express = require("express");
-const fs = require("fs");
+const express = require('express');
+
+// app use express
+const app = express();
+
+// creating environment variable port
+const PORT = process.env.PORT || 3001;
 
 
-// Sets up the express app
-var app = express();
-var PORT = process.env.PORT || 8080
-
-// Sets up the express app to handle data parsing
+// asks express to create a route for every file in the 'public' folder and give it a '/' route
+app.use(express.static('public'));
+// sets up express app to handel data parser, middle wear created req.body
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use("/public/assets", express.static(__dirname + "/public/assets"));
 
 
-require("./routes/html-routes")(app);
-require("./routes/api-routes")(app);
+// routes to route files
+require('./routes/apiRoutes')(app);
+require('./routes/htmlRoutes')(app);
 
-// Starts the server to begin listening
-app.listen(PORT, function() {
-    console.log("App listening on PORT " + PORT);
+
+// app listener - starts the server
+app.listen(PORT, () => {
+  console.log(`Server available at localhost${PORT}`);
 });
