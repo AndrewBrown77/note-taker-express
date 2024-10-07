@@ -1,15 +1,25 @@
 {
   "name": "note-taker-express",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "* GIVEN a note-taking application",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
-  "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "express": "^4.21.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AndrewBrown77/note-taker-express"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/AndrewBrown77/note-taker-express/issues"
+  },
+  "homepage": "https://github.com/AndrewBrown77/note-taker-express/blob/main/README.md"
 }
+
