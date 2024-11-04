@@ -1,7 +1,7 @@
 # Note Taker Starter Code
 test adding requirements to correct
 
-* Application doesn't allow user to create and save persistent notes
+Application doesn't allow user to create and save persistent notes
 
 * Application doesn't allow user to view previously saved notes
 
