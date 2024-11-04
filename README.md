@@ -32,5 +32,5 @@ Roadmap: Phase 1- Planning and Project Setup -Define Application Requirements -S
 Contributing: 
 Andrew Brown: https://github.com/AndrewBrown77
 
-Live Link:
+Live Link: https://andrewbrown77.github.io/note-taker-express/
 
