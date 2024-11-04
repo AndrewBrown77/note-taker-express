@@ -1,16 +1,27 @@
-// importing the express 1
-const express = require('express');
-const path = require('path');
+// Dependencies
+// Set up express server & tell node we are creating an express server
+
+const express = require("express");
+const app = express ();
+
+// Sets the port for listener
+const PORT = process.env.PORT || 3001;
+
+// Routers
+const apiRouter = require("./routes/apiRoutes");
+const htmlRouter = require("./routes/htmlRoutes");
 
 
-//This app object will represent your Express web server and allows you to define routes, handle requests, and listen on a specific port. 2
-const app = express();
-const PORT = 3001;
-
-app.use(express.static('public'));
-
-app.get('/', (req, res) => res.send('Navigate to /send or /routes'));
-
-
-//to parse json request bodys 
+// Sets up the Express app to handle data parsing
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
+// Middleware 
+app.use(express.static("public"));
+app.use(express.static("db"));
+// order matters here!
+app.use(apiRouter);
+app.use(htmlRouter);
+
+// Start the server
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
